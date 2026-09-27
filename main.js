@@ -1,4 +1,4 @@
-const CA = "0x1809861da364e52Af75A4f4FAf63dfe6a599181a";
+const CA = "0xcomingsoon";
 const PAIR = "0xae8545d5f07c5d202ec42023e27288cc2adb1b4ef98c08ed63556ea3fcd82bbb";
 
 const toast = document.getElementById("toast");
