@@ -1,5 +1,5 @@
-const CA = "0xcomingsoon";
-const PAIR = "0xae8545d5f07c5d202ec42023e27288cc2adb1b4ef98c08ed63556ea3fcd82bbb";
+const CA = "0xd4f3bd0abf52415c50ca2c80362fd1ff667a1b77";
+const PAIR = "0x8c6766affe5a8301d47df1ac73551e749e139c4e874047c35f4f0d0872e4a3ae";
 
 const toast = document.getElementById("toast");
 const glow = document.getElementById("cursor-glow");
