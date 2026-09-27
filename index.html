@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#06122b" />
+  <title>UBIMASCOT (UBIGUY) on Arc</title>
+  <meta name="description" content="Official Mascot of @UBIdotFUN, now live on @arc. UBIMASCOT is the walking white figure in the blue cap. Symbol UBIGUY on Arc Chain." />
+  <link rel="canonical" href="https://ubimascot.lol/" />
+  <link rel="icon" href="logo.jpg" type="image/jpeg" />
+  <meta property="og:title" content="UBIMASCOT (UBIGUY)" />
+  <meta property="og:description" content="Official Mascot of @UBIdotFUN, now live on @arc." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ubimascot.lol/" />
+  <meta property="og:image" content="logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="UBIMASCOT (UBIGUY)" />
+  <meta name="twitter:description" content="Official Mascot of @UBIdotFUN, now live on @arc." />
+  <meta name="twitter:image" content="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("ready");</script>
+</head>
+<body id="top">
+  <canvas id="orbfield" aria-hidden="true"></canvas>
+  <div class="wash" aria-hidden="true"></div>
+  <div class="halo" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+  <div class="seek" id="seek" aria-hidden="true"></div>
+
+  <header class="capbar" id="capbar">
+    <a class="sigil" href="#top">
+      <img src="logo.jpg" alt="" width="42" height="42" />
+      <span>
+        <strong>UBIMASCOT</strong>
+        <small>UBIGUY</small>
+      </span>
+    </a>
+    <button class="fold" type="button" aria-expanded="false" aria-controls="lanes">
+      <span></span>
+      <span></span>
+      <span class="sr">Menu</span>
+    </button>
+    <nav id="lanes" class="lanes">
+      <a href="#about">About</a>
+      <a href="#howtobuy">How to Buy</a>
+      <a href="#chart">Chart</a>
+      <a href="#joinus">Join Us</a>
+      <a class="xchip" href="https://x.com/UBIMASCOT" target="_blank" rel="noopener noreferrer" aria-label="UBIMASCOT on X">
+        <img src="icons/x.svg" alt="" width="14" height="14" />
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="stage" id="hero">
+      <div class="bowl">
+        <p class="live"><i></i> Arc Chain · Uniswap v4 · USDC pair</p>
+
+        <div class="walker" id="walker">
+          <div class="pool"></div>
+          <span class="ring r1"><i class="spark"></i></span>
+          <span class="ring r2"><i class="spark"></i></span>
+          <span class="ring r3"><i class="spark"></i></span>
+          <img class="figure" src="logo.png" alt="UBIMASCOT, a white rounded figure in a blue UBi.fun cap, mid-stride" width="420" height="420" />
+        </div>
+
+        <h1>UBIMASCOT</h1>
+        <p class="ticker">UBIGUY</p>
+        <p class="lede">Official Mascot of <a href="https://x.com/UBIdotFUN" target="_blank" rel="noopener noreferrer">@UBIdotFUN</a>, now live on <a href="https://x.com/arc" target="_blank" rel="noopener noreferrer">@arc</a>.</p>
+
+        <div class="capsule">
+          <span>Contract</span>
+          <code id="ca">0x1809861da364e52Af75A4f4FAf63dfe6a599181a</code>
+          <button type="button" data-copy="0x1809861da364e52Af75A4f4FAf63dfe6a599181a">Copy</button>
+        </div>
+
+        <div class="acts">
+          <a class="chip fill" href="https://app.uniswap.org/swap?chain=arc&amp;outputCurrency=0x1809861da364e52Af75A4f4FAf63dfe6a599181a" target="_blank" rel="noopener noreferrer">
+            <img src="icons/uniswap.svg" alt="" width="18" height="18" />
+            Buy on Uniswap
+          </a>
+          <a class="chip ghost" href="#chart">
+            <img src="icons/dexscreener.svg" alt="" width="18" height="18" />
+            View chart
+          </a>
+        </div>
+
+        <dl class="meters" id="meters" hidden>
+          <div><dt>Price</dt><dd id="m-price">—</dd></div>
+          <div><dt>Market cap</dt><dd id="m-mcap">—</dd></div>
+          <div><dt>Liquidity</dt><dd id="m-liq">—</dd></div>
+          <div><dt>24h</dt><dd id="m-chg">—</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon-run">
+        <p>UBIMASCOT <em>/</em> UBIGUY <em>/</em> OFFICIAL MASCOT OF UBI.FUN <em>/</em> LIVE ON ARC <em>/</em> UNISWAP V4 <em>/</em> USDC PAIR <em>/</em> WALK WITH THE CAP <em>/</em></p>
+        <p>UBIMASCOT <em>/</em> UBIGUY <em>/</em> OFFICIAL MASCOT OF UBI.FUN <em>/</em> LIVE ON ARC <em>/</em> UNISWAP V4 <em>/</em> USDC PAIR <em>/</em> WALK WITH THE CAP <em>/</em></p>
+      </div>
+    </div>
+
+    <section class="dossier" id="about">
+      <div class="bowl">
+        <header class="slot rise">
+          <span>01</span>
+          <h2>About</h2>
+        </header>
+        <div class="split">
+          <article class="story rise">
+            <p class="eyebrow">The figure</p>
+            <h3>A white stride in a blue cap.</h3>
+            <p>UBIMASCOT is the official mascot of ubi.fun, now live on Arc. The body is a single soft shape. The face is two dots and a quiet smile. The cap reads UBi.fun. That is the whole character, and that is the point.</p>
+            <p>The token is UBIGUY. It trades against USDC on Uniswap v4 on Arc Chain. The walk is the brand. The cap is the signal. The pool is public.</p>
+            <img class="story-mark" src="logo.jpg" alt="" width="96" height="96" />
+          </article>
+          <div class="cards">
+            <article class="rise">
+              <h3>Name</h3>
+              <p>UBIMASCOT</p>
+            </article>
+            <article class="rise">
+              <h3>Symbol</h3>
+              <p>UBIGUY</p>
+            </article>
+            <article class="rise">
+              <h3>Chain</h3>
+              <p>Arc · 5042 · USDC gas</p>
+            </article>
+            <article class="rise">
+              <h3>Venue</h3>
+              <p>Uniswap v4 · UBIGUY / USDC</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="path" id="howtobuy">
+      <div class="bowl">
+        <header class="slot rise">
+          <span>02</span>
+          <h2>How to Buy</h2>
+        </header>
+        <p class="slot-lead rise">Four quiet steps. The contract does not change between screens.</p>
+        <ol class="steps">
+          <li class="rise">
+            <span class="n">01</span>
+            <h3>Add Arc</h3>
+            <p>Any EVM wallet can take Arc as a custom network. Gas is paid in USDC.</p>
+            <ul class="spec">
+              <li><span>Chain ID</span><strong>5042</strong></li>
+              <li><span>RPC</span><strong>rpc.mainnet.arc.io</strong></li>
+              <li><span>Gas</span><strong>USDC</strong></li>
+              <li><span>Explorer</span><strong>explorer.arc.io</strong></li>
+            </ul>
+            <button class="textlink" type="button" id="add-arc">Add Arc to wallet</button>
+          </li>
+          <li class="rise">
+            <span class="n">02</span>
+            <h3>Hold USDC on Arc</h3>
+            <p>Swaps and fees both spend USDC on this chain. Land USDC on your Arc address before you open the pool.</p>
+          </li>
+          <li class="rise">
+            <span class="n">03</span>
+            <h3>Swap on Uniswap</h3>
+            <p>Open the Arc market and buy UBIGUY. Read the contract on the confirmation before you sign.</p>
+            <code class="mini">0x1809861da364e52Af75A4f4FAf63dfe6a599181a</code>
+            <a class="textlink" href="https://app.uniswap.org/swap?chain=arc&amp;outputCurrency=0x1809861da364e52Af75A4f4FAf63dfe6a599181a" target="_blank" rel="noopener noreferrer">
+              <img src="icons/uniswap.svg" alt="" width="16" height="16" />
+              Open Uniswap
+            </a>
+          </li>
+          <li class="rise">
+            <span class="n">04</span>
+            <h3>Read the pair</h3>
+            <p>The chart is the Uniswap v4 UBIGUY / USDC pool on Arc. Confirm the pair before you size a trade.</p>
+            <a class="textlink" href="https://dexscreener.com/arc/0xae8545d5f07c5d202ec42023e27288cc2adb1b4ef98c08ed63556ea3fcd82bbb" target="_blank" rel="noopener noreferrer">
+              <img src="icons/dexscreener.svg" alt="" width="16" height="16" />
+              Dexscreener
+            </a>
+            <a class="textlink" href="https://explorer.arc.io/token/0x1809861da364e52Af75A4f4FAf63dfe6a599181a" target="_blank" rel="noopener noreferrer">
+              <img src="icons/blockscout.svg" alt="" width="16" height="16" />
+              Explorer
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="screen" id="chart">
+      <div class="bowl">
+        <header class="slot rise">
+          <span>03</span>
+          <h2>Chart</h2>
+        </header>
+        <p class="slot-lead rise">Live Dexscreener embed for the Arc Chain pair.</p>
+        <div class="frame rise">
+          <iframe
+            title="UBIGUY chart on Dexscreener for Arc Chain"
+            src="https://dexscreener.com/arc/0xae8545d5f07c5d202ec42023e27288cc2adb1b4ef98c08ed63556ea3fcd82bbb?embed=1&amp;theme=dark&amp;trades=0&amp;info=0"
+            loading="lazy"
+            allow="fullscreen"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="club" id="joinus">
+      <div class="bowl">
+        <header class="slot rise">
+          <span>04</span>
+          <h2>Join Us</h2>
+        </header>
+        <p class="slot-lead rise">The banner is the walk. The doors open X, the pool, and the chart.</p>
+        <figure class="poster rise">
+          <img src="banner.png" alt="UBIMASCOT standing beside dimensional UBIGUY lettering on an electric blue field" width="1800" height="600" />
+          <span class="sheen" aria-hidden="true"></span>
+        </figure>
+        <div class="doors">
+          <a class="door rise" href="https://x.com/UBIMASCOT" target="_blank" rel="noopener noreferrer">
+            <img src="icons/x.svg" alt="" width="22" height="22" />
+            <span>
+              <strong>X</strong>
+              <small>x.com/UBIMASCOT</small>
+            </span>
+          </a>
+          <a class="door rise" href="https://app.uniswap.org/swap?chain=arc&amp;outputCurrency=0x1809861da364e52Af75A4f4FAf63dfe6a599181a" target="_blank" rel="noopener noreferrer">
+            <img src="icons/uniswap.svg" alt="" width="22" height="22" />
+            <span>
+              <strong>Uniswap</strong>
+              <small>Buy UBIGUY</small>
+            </span>
+          </a>
+          <a class="door rise" href="https://dexscreener.com/arc/0xae8545d5f07c5d202ec42023e27288cc2adb1b4ef98c08ed63556ea3fcd82bbb" target="_blank" rel="noopener noreferrer">
+            <img src="icons/dexscreener.svg" alt="" width="22" height="22" />
+            <span>
+              <strong>Dexscreener</strong>
+              <small>Arc pair</small>
+            </span>
+          </a>
+          <a class="door rise" href="https://x.com/UBIdotFUN" target="_blank" rel="noopener noreferrer">
+            <img src="logo.jpg" alt="" width="22" height="22" />
+            <span>
+              <strong>ubi.fun</strong>
+              <small>@UBIdotFUN</small>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <div class="bowl foot">
+      <p>UBIMASCOT · UBIGUY · Official mascot of ubi.fun · Live on Arc</p>
+      <p class="foot-ca">0x1809861da364e52Af75A4f4FAf63dfe6a599181a</p>
+      <p>A memecoin. Confirm the contract before you swap.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="main.js"></script>
+</body>
+</html>
